@@ -1,0 +1,25 @@
+{
+  "name": "stuntingstopper",
+  "version": "1.0.0",
+  "description": "aplikasi kkn sama medika",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rici00/withMedika.git"
+  },
+  "keywords": [
+    "stunting",
+    "medical",
+    "it",
+    "technology"
+  ],
+  "author": "richard and thoriq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rici00/withMedika/issues"
+  },
+  "homepage": "https://github.com/Rici00/withMedika#readme"
+}
