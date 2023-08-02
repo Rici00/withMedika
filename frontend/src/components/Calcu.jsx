@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRef } from 'react';
 
 import { Container } from '@/components/Container';
 import axios from 'axios';
@@ -601,6 +602,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
     const [tinggiBadan, setTinggiBadan] = useState();
     const [hasilPenilaian, setHasilPenilaian] = useState('');
     // const [isShowResult, setIsShowResult] = useState(false);
+    const resultRef = useRef(null);
 
     async function handleSubmit(event) {
       event.preventDefault();
@@ -656,6 +658,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
         // Handle error
         console.error(error);
       }
+      resultRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     return (
       <section
@@ -664,7 +667,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       className="border-t border-gray-200 bg-cyan-100 py-10 sm:py-12"
     >
       <Container>
-        <div className='bg-cyan-100 m-6 rounded-sm'>
+        <div className='bg-cyan-100 m-6 rounded-xl'>
           <div className='text-4xl font-medium text-center text-gray-900'>
         <h1>Kalkulator Gizi</h1>
         <p className="mt-2 mb-4 text-lg text-gray-600 sm:text-center">
@@ -754,7 +757,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
         {/* {hasilPenilaian && <p>Hasil Penilaian Gizi: {hasilPenilaian}</p>} */}
         {/* </>
       </> */}
-      <div className="w-11/12 max-w-5xl mx-auto py-12">
+      <div className="w-11/12 max-w-5xl mx-auto py-12 " ref={resultRef}>
   { hasilPenilaian === 'Stunted' ? (
     <>
     <div classname="bg-gradient-to-r from-indigo-600 to-purple-800 py-4">
