@@ -252,15 +252,13 @@ function AppDemo() {
       : ((activeValue - previousValue) / previousValue) * 100
 
   return (
-    <AppScreen>
-      <AppScreen.Body>
         <div className="p-4">
           <div className="flex gap-2">
-            <div className="text-xs leading-6 text-gray-500">
+            <div className="text-xl leading-6 text-gray-500">
               Data Stunting Permenkes
             </div>
             {/* <div className="text-sm text-gray-900">$CSS</div> */}
-            <svg viewBox="0 0 24 24" className="ml-auto h-6 w-6" fill="none">
+            {/* <svg viewBox="0 0 24 24" className="ml-auto h-6 w-6" fill="none">
               <path
                 d="M5 12a7 7 0 1 1 14 0 7 7 0 0 1-14 0ZM12 9v6M15 12H9"
                 stroke="#171717"
@@ -268,7 +266,7 @@ function AppDemo() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-            </svg>
+            </svg> */}
           </div>
           <div className="mt-3 border-t border-gray-200 pt-5">
             <div className="flex items-baseline gap-2">
@@ -289,17 +287,17 @@ function AppDemo() {
                 </div>
               )}
             </div>
-            <div className="mt-6 flex gap-4 text-xs text-gray-500">
-              <div>'07</div>
-              <div>'10</div>
-              <div>'13</div>
-              <div>'16</div>
+            <div className="mt-6 flex md:gap-8 gap-2 md:text-xl text-xs text-gray-500">
+              <div>2007</div>
+              <div>2010</div>
+              <div>2013</div>
+              <div>2016</div>
               {/* <div>'18</div> */}
-              <div>'19</div>
-              <div>'21</div>
-              <div>'22</div>
+              <div>2019</div>
+              <div>2021</div>
+              <div>2022</div>
               <div className="font-semibold text-cyan-600">'23</div>
-              <div>'24</div>
+              <div className="font-semibold text-cyan-600">'24</div>
             </div>
             <div className="mt-3 rounded-lg bg-gray-50 ring-1 ring-inset ring-black/5">
               <Chart
@@ -311,9 +309,9 @@ function AppDemo() {
                 onChangeActivePointIndex={setActivePointIndex}
               />
             </div>
-            <div className="mt-4 rounded-lg bg-cyan-500 px-4 py-2 text-center text-sm font-semibold text-white">
+            {/* <div className="mt-4 rounded-lg bg-cyan-500 px-4 py-2 text-center text-sm font-semibold text-white">
               Cegah Stunting
-            </div>
+            </div> */}
             {/* <div className="mt-3 divide-y divide-gray-100 text-sm">
               <div className="flex justify-between py-1">
                 <div className="text-gray-500">Open</div>
@@ -330,8 +328,6 @@ function AppDemo() {
             </div> */}
           </div>
         </div>
-      </AppScreen.Body>
-    </AppScreen>
   )
 }
 
@@ -361,9 +357,12 @@ export function Hero() {
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
             <BackgroundIllustration className="absolute left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
             <div className="-mx-4 h-[448px] px-9 [mask-image:linear-gradient(to_bottom,white_60%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-bottom-20 lg:-top-10 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32">
-              <PhoneFrame className="mx-auto max-w-[366px]" priority>
                 <AppDemo />
-              </PhoneFrame>
+                  {/* <Image
+                    src="/path/to/your/image.jpg" // Ganti dengan path gambar sesuai dengan direktori dan nama file gambar Anda
+                    alt="Deskripsi gambar" // Ganti dengan deskripsi gambar sesuai konten gambar Anda
+                    className="rounded-xl" // Tambahkan kelas CSS jika diperlukan untuk mengatur style gambar
+                  /> */}
             </div>
           </div>
           <div className="relative -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
