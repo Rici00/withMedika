@@ -466,7 +466,7 @@ function FeaturesMobile() {
 export function PrimaryFeatures() {
   return (
     <section
-      id="features"
+      id="wiki"
       aria-label="Features for investing all your money"
       className="bg-pink-300 py-20 sm:py-32"
     >
