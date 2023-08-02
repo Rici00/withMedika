@@ -25,9 +25,9 @@ export function CallToAction() {
           <h2 class="max-w-md text-4xl font-bold text-center md:text-left">
             Kenapa kita harus mencegah Stunting?
           </h2>
-          <p class="max-w-sm  text-darkGrayishBlue text-center md:text-left">
+          {/* <p class="max-w-sm  text-darkGrayishBlue text-center md:text-left">
             biar ga kayak adin. canda adin. tapi kamu bisa jadi salah satu contoh biar orang-orang ga stunting. ril ini mah.
-          </p>
+          </p> */}
         </div>
         {/* image */}
         <div class="flex flex-col space-y-8 md:w-1/2">
