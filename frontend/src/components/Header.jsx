@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import { Popover } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
+import Image from 'next/image'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
+import  Ricad  from '../images/logo.png';
 import { useEffect } from 'react'
 import { NavLinks } from '@/components/NavLinks'
 
@@ -58,11 +60,12 @@ export function Header() {
   }
   return (
     <header>
-      <nav>
-        <Container className="relative z-50 bg-cyan-50 flex justify-between py-8">
+      <nav className='bg-white'>
+        <Container className="relative z-50 bg-white flex justify-between py-8">
           <div className="relative z-10 flex items-center gap-16">
             <Link href="/" aria-label="Home">
-              <Logo className="h-10 w-auto" />
+            <Image src={Ricad} alt="" className="h-12 w-12 flex-none fill-cyan-500" unoptimized />
+            {/* <img alt='' src='../images/logo.png' className="h-10 w-10 flex-none fill-cyan-500"/> */}
             </Link>
             <div className="hidden lg:flex lg:gap-10">
               <NavLinks />
@@ -73,7 +76,7 @@ export function Header() {
               {({ open }) => (
                 <>
                   <Popover.Button
-                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 [&:not(:focus-visible)]:focus:outline-none"
+                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-cyan-600 active:stroke-gray-900 [&:not(:focus-visible)]:focus:outline-none"
                     aria-label="Toggle site navigation"
                   >
                     {({ open }) =>

@@ -661,16 +661,16 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       <section
       id="calcu"
       aria-labelledby="calcu"
-      className="border-t border-gray-200 bg-cyan-100 py-20 sm:py-32"
+      className="border-t border-gray-200 bg-cyan-100 py-10 sm:py-12"
     >
       <Container>
         <div className='bg-cyan-100 m-6 rounded-sm'>
           <div className='text-4xl font-medium text-center text-gray-900'>
         <h1>Kalkulator Gizi</h1>
-        <p className="mt-2 text-lg text-gray-600 sm:text-center">
+        <p className="mt-2 mb-4 text-lg text-gray-600 sm:text-center">
             Ketahui Kondisi Gizi Anak Anda        </p>
         </div>
-        <form onSubmit={handleSubmit} className=" mx-auto my-8 p-4 bg-white shadow-md rounded-md">
+        <form onSubmit={handleSubmit} className=" mx-auto my-2 p-2 bg-white shadow-md rounded-md">
         <div className="mb-4">
     <label htmlFor="anak" className="block font-medium text-gray-700">Nama Anak : </label>
     <input
@@ -744,7 +744,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
 
   <button
     type="submit"
-    className="w-full py-3 mt-4 bg-cyan-500 hover:bg-cyan-600 focus:ring focus:ring-cyan-200 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-opacity-50"
+    className="w-full py-3 mt-4 bg-cyan-500 hover:bg-cyan-600 focus:ring-cyan-200 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-opacity-50"
   >
     Hitung
   </button>
@@ -754,10 +754,10 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
         {/* {hasilPenilaian && <p>Hasil Penilaian Gizi: {hasilPenilaian}</p>} */}
         {/* </>
       </> */}
-      <div className="w-11/12 max-w-5xl mx-auto py-32">
+      <div className="w-11/12 max-w-5xl mx-auto py-12">
   { hasilPenilaian === 'Stunted' ? (
     <>
-    <div classname="bg-gradient-to-r from-indigo-600 to-purple-800 py-16">
+    <div classname="bg-gradient-to-r from-indigo-600 to-purple-800 py-4">
       <h1 className="md:text-5xl text-4xl font-bold mb-16 text-center">
         🔎{' '}
         <span className="text-transparent bg-clip-text bg-black capitalize">
