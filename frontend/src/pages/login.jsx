@@ -51,13 +51,13 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>Sign In - Pocket</title>
+        <title>Masuk sebagai tenaga kesehatan</title>
       </Head>
       <AuthLayout
-        title="Sign in to account"
+        title="Masuk ke Akun Khusus"
         subtitle={
           <>
-            BUat akun posyandu/pihak kesehatan?{' '}
+            Buat akun posyandu/pihak kesehatan?{' '}
             <Link href="/register" className="text-cyan-600">
               Daftar
             </Link>{' '}
