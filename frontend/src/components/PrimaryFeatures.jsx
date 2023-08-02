@@ -200,9 +200,9 @@ function WikiScreen({ custom, animated = false }) {
   const largerTextSize = '20px'; // Set the desired larger text size here
 
   return (
-    <AppScreen className="w-full">
+    <AppScreen className="w-full  h-full">
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <div className="px-8 py-8">
+        <div className="px-8 py-8  ">
           <div className="space-y-4">
             {[
               { label: 'Stunted', value: 'Kondisi pertumbuhan fisik dan perkembangan anak terhambat, sehingga tinggi badan kurang.' },
@@ -219,9 +219,9 @@ function WikiScreen({ custom, animated = false }) {
               </div>
             ))}
           </div>
-          <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
+          {/* <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
             Yuk Baca!
-          </div>
+          </div> */}
         </div>
       </MotionAppScreenBody>
     </AppScreen>
@@ -233,9 +233,9 @@ function CiriScreen({ custom, animated = false }) {
   const isPhoneMode = useMediaQuery({ maxWidth: 640 });
 
   return (
-    <AppScreen className="w-full">
+    <AppScreen className="w-full h-full md:translate-y-12">
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <div className="px-4 py-4">
+        <div className="px-4 py-4 ">
           {/* Use the "mx-auto" class to center the image */}
           {/* Use the "w-300" class to limit the width to 300px on larger screens */}
           {/* Use the "w-full max-w-300" classes to set the width to 100% on phone mode, but with a max width of 300px */}
@@ -245,9 +245,9 @@ function CiriScreen({ custom, animated = false }) {
             width={isPhoneMode ? 300 : 800}
             height={isPhoneMode ? 300 : 800}
           />
-          <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
+          {/* <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
             Yuk Baca!
-          </div>
+          </div> */}
         </div>
       </MotionAppScreenBody>
     </AppScreen>
@@ -259,7 +259,7 @@ function BahayaScreen({ custom, animated = false }) {
   const isPhoneMode = useMediaQuery({ maxWidth: 640 });
 
   return (
-    <AppScreen className="w-full">
+    <AppScreen className="w-full md:translate-y-12">
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-4">
           {/* Use the "mx-auto" class to center the image */}
@@ -271,9 +271,9 @@ function BahayaScreen({ custom, animated = false }) {
             width={isPhoneMode ? 300 : 800}
             height={isPhoneMode ? 300 : 800}
           />
-          <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
+          {/* <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
             Yuk Baca!
-          </div>
+          </div> */}
         </div>
       </MotionAppScreenBody>
     </AppScreen>
@@ -327,8 +327,8 @@ function FeaturesDesktop() {
               />
             )}
             <div className="relative z-10 p-8">
-              <feature.icon className="h-8 w-8" />
-              <h3 className="mt-6 text-lg font-semibold text-white">
+              {/* <feature.icon className="h-8 w-8" /> */}
+              <h3 className="mt-2 text-lg font-semibold text-white">
                 <Tab className="text-left [&:not(:focus-visible)]:focus:outline-none">
                   <span className="absolute inset-0 rounded-2xl" />
                   {feature.name}
@@ -422,17 +422,16 @@ function FeaturesMobile() {
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
-              <div className="relative mx-auto w-full max-w-[366px]">
+              <div className="relative mx-auto w-full h-full max-w-[366px]">
                 <feature.screen />
               </div>
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
-                <feature.icon className="h-8 w-8" />
-                <h3 className="mt-6 text-sm font-semibold text-white sm:text-lg">
+                {/* <h3 className="mt-6 text-sm font-semibold text-white sm:text-lg">
                   {feature.name}
                 </h3>
                 <p className="mt-2 text-sm text-gray-400">
                   {feature.description}
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -468,7 +467,7 @@ export function PrimaryFeatures() {
     <section
       id="wiki"
       aria-label="Features for investing all your money"
-      className="bg-pink-300 py-20 sm:py-32"
+      className="bg-cyan-300 py-8 sm:py-12"
     >
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">

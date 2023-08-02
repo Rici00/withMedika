@@ -256,7 +256,7 @@ function AppDemo() {
   return (
         <div className="p-4">
           <div className="flex gap-2">
-            <div className="text-xl leading-6 text-gray-500">
+            <div className="text-xl leading-6 text-gray-900">
               Data Stunting Permenkes
             </div>
             {/* <div className="text-sm text-gray-900">$CSS</div> */}
