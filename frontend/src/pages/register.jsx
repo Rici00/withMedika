@@ -110,8 +110,8 @@ export default function Register() {
               id="referral-source"
               name="referral_source"
             >
-              <option value={`KKN PPM UGM`}>KKN PPM UGM</option>
-              <option value={`Membangun Mandalika 2023`}>Membangun Mandalika 2023</option>
+              <option value={`option1`}>Avista</option>
+              <option value={`option2`}>ITTTTTTT</option>
             </SelectField>
           </div>
           <Button type="submit" color="cyan" className="mt-8 w-full">
