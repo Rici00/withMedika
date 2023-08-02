@@ -18,11 +18,11 @@ export function CallToAction() {
     >
       {/* <!-- Flex container --> */}
       <div
-        class="container flex flex-col px-6 md:px-32 text-center md:text-left mx-auto mt-10 space-y-18 md:space-y-0 md:flex-row mx-auto items-center"
+        className="container flex flex-col px-6 md:px-32 text-center md:text-left mx-auto mt-10 space-y-18 md:space-y-0 md:flex-row mx-auto items-center"
       >
         {/* <!-- kiri --> */}
-        <div class="flex flex-col space-y-12 md:w-1/2">
-          <h2 class="max-w-md text-4xl font-bold text-center md:text-left">
+        <div className="flex flex-col space-y-12 md:w-1/2">
+          <h2 className="max-w-md text-4xl font-bold text-center md:text-left">
             Kenapa kita harus mencegah Stunting?
           </h2>
           {/* <p class="max-w-sm  text-darkGrayishBlue text-center md:text-left">
@@ -30,9 +30,9 @@ export function CallToAction() {
           </p> */}
         </div>
         {/* image */}
-        <div class="flex flex-col space-y-8 md:w-1/2">
+        <div className="flex flex-col space-y-8 md:w-1/2">
           <div
-            class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row"
+            className="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row"
           >
             <div>
             <ul
