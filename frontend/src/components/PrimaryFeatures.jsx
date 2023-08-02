@@ -200,14 +200,15 @@ function WikiScreen({ custom, animated = false }) {
   const largerTextSize = '20px'; // Set the desired larger text size here
 
   return (
-    <AppScreen className="w-full  h-full">
+    <AppScreen className="w-full  h-full md:translate-y-12">
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <div className="px-8 py-8  ">
+        <div className="px-8 py-8 pt-12">
           <div className="space-y-4">
             {[
               { label: 'Stunted', value: 'Kondisi pertumbuhan fisik dan perkembangan anak terhambat, sehingga tinggi badan kurang.' },
               { label: 'Underweight', value: 'Kondisi bobot tubuh anak lebih rendah dari yang dianggap sehat untuk usianya.' },
               { label: 'Overweight', value: 'Kondisi bobot tubuh anak terlampau besar karena adanya penumpukan lemak.' },
+              { label: 'Normal', value: 'Kondisi pertumbuhan fisik dan perkembangan anak sama seperti anak - anak pada umumnya dan termasuk anak yang sehat.' },
             ].map((field) => (
               <div key={field.label}>
                 <div style={{ fontSize: isPhoneMode ? 'inherit' : largerTextSize }} className="text-sm text-cyan-500 mb-4">
