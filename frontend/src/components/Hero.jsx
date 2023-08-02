@@ -13,6 +13,8 @@ import logoCnn from '@/images/logos/cnn.svg'
 import logoFastCompany from '@/images/logos/fast-company.svg'
 import logoForbes from '@/images/logos/forbes.svg'
 import logoMandalika from '@/images/logos/Mmandalika.png'
+import logoUGM from '@/images/logos/UGM.png'
+import logoKKN from '@/images/logos/KKN.png'
 import logoHuffpost from '@/images/logos/huffpost.svg'
 import logoTechcrunch from '@/images/logos/techcrunch.svg'
 import logoWired from '@/images/logos/wired.svg'
@@ -375,6 +377,8 @@ export function Hero() {
             >
               {[
                 // ['Forbes', logoForbes],
+                ['UGM', logoUGM],
+                ['KKN', logoKKN],
                 ['Mandalika', logoMandalika],
                 // ['TechCrunch', logoTechcrunch],
                 // ['Wired', logoWired],
@@ -386,7 +390,7 @@ export function Hero() {
               ].map(([name, logo, className]) => (
                 <li key={name} className={clsx('flex', className)}>
                   {/* <Image src={logo} alt={name} className="h-25" unoptimized /> */}
-                  <Image src={logo} alt={name} style={{ width: '100px', height: 'auto' }} unoptimized />
+                  <Image src={logo} alt={name} style={{ width: '60px', height: 'auto' }} unoptimized />
 
                 </li>
               ))}
