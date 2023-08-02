@@ -44,6 +44,13 @@ const features = [
     icon: DeviceUserIcon,
     screen: GiziScreen,
   },
+  {
+    name: 'Pemberian gizi yang seimbang',
+    description:
+      'Konsumsi makanan  dengan proporsi yang tepat untuk mendukung pertumbuhan dan perkembangan optimal',
+    icon: DeviceUserIcon,
+    screen: GiziScreen,
+  },
 
 
   // {
