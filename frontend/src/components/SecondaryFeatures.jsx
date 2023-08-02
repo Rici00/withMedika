@@ -193,17 +193,17 @@ export function SecondaryFeatures() {
         </div>
         <ul
           role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none "
+          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-lg sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none "
         >
           {features.map((feature) => (
             <li
               key={feature.name}
-              className="rounded-2xl border border-gray-200 p-8"
+              className="rounded-5xl border border-gray-200 p-8"
             >
-              <feature.icon className="h-8 w-8" />
-              <h3 className="mt-6 font-semibold text-gray-900">
+              {/* <feature.icon className="h-8 w-8" /> */}
+              <h2 className="mt-6 font-semibold text-gray-900">
                 {feature.name}
-              </h3>
+              </h2>
               <p className="mt-2 text-gray-700">{feature.description}</p>
             </li>
           ))}
