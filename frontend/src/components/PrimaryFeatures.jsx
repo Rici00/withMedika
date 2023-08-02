@@ -4,9 +4,12 @@ import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useDebouncedCallback } from 'use-debounce'
 import Image from 'next/image'
+import { useMediaQuery } from 'react-responsive';
 
 import isiPiring from '@/images/logos/isipiring.png'
 import minum from '@/images/logos/minum.png'
+import ciri from '@/images/logos/ciri2.png'
+import bahaya from '@/images/logos/bahaya.png'
 import olahraga from '@/images/logos/olahraga.png'
 import cuciTangan from '@/images/logos/cucitangan.png'
 import bbc from '@/images/logos/bbc.svg'
@@ -35,21 +38,21 @@ const features = [
     description:
       'Kenali apa itu istilah kondisi Stunted, Underweight, dan Overweight.',
     icon: DeviceUserIcon,
-    screen: InviteScreen,
+    screen: WikiScreen,
   },
   {
-    name: 'Pemberian gizi yang seimbang',
+    name: 'Ketahui ciri-ciri stunting pada anak',
     description:
-      'Konsumsi makanan  dengan proporsi yang tepat untuk mendukung pertumbuhan dan perkembangan optimal',
+      'Lorem ipsum',
     icon: DeviceUserIcon,
-    screen: GiziScreen,
+    screen: CiriScreen,
   },
   {
-    name: 'Pemberian gizi yang seimbang',
+    name: 'Waspada akan bahaya stunting pada anak',
     description:
-      'Konsumsi makanan  dengan proporsi yang tepat untuk mendukung pertumbuhan dan perkembangan optimal',
+      'Lorem ipsum',
     icon: DeviceUserIcon,
-    screen: GiziScreen,
+    screen: BahayaScreen,
   },
 
 
@@ -190,7 +193,11 @@ const bodyAnimation = {
   },
 }
 
-function InviteScreen({ custom, animated = false }) {
+
+
+function WikiScreen({ custom, animated = false }) {
+  const isPhoneMode = useMediaQuery({ maxWidth: 640 });
+
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
@@ -224,31 +231,26 @@ function InviteScreen({ custom, animated = false }) {
   )
 }
 
-function GiziScreen({ custom, animated = false }) {
+function CiriScreen({ custom, animated = false }) {
+  // Define the breakpoint for the phone mode
+  const isPhoneMode = useMediaQuery({ maxWidth: 640 });
+
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
         <AppScreen.Title>Mari Kita <span className="text-cyan-300">Baca</span></AppScreen.Title>
-        {/* <AppScreen.Subtitle>
-          Apa itu kondisi <span className="text-cyan-300">Stunted, Underweight</span>, dan <span className="text-cyan-300">Overweight</span>.
-        </AppScreen.Subtitle> */}
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-4">
-          <div className="space-y-2">
-            {[
-              { label: 'Stunted', value: 'Kondisi pertumbuhan fisik dan perkembangan anak terhambat, sehingga tinggi badan kurang.' },
-              { label: 'Underweight', value: 'Kondisi bobot tubuh anak lebih rendah dari yang dianggap sehat untuk usianya.' },
-              { label: 'Overweight', value: 'Kondisi bobot tubuh anak terlampau besar karena adanya penumpukan lemak.' },
-            ].map((field) => (
-              <div key={field.label}>
-                <div className="text-sm text-cyan-500">{field.label}</div>
-                <div className="mt-2 border-b border-gray-200 pb-2 text-xs text-gray-1000">
-                  {field.value}
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Use the "mx-auto" class to center the image */}
+          {/* Use the "w-300" class to limit the width to 300px on larger screens */}
+          {/* Use the "w-full max-w-300" classes to set the width to 100% on phone mode, but with a max width of 300px */}
+          <Image
+            src={ciri}
+            className={`mx-auto ${isPhoneMode ? 'w-full max-w-300' : 'w-300'}`}
+            width={isPhoneMode ? 300 : 800}
+            height={isPhoneMode ? 300 : 800}
+          />
           <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
             Yuk Baca!
           </div>
@@ -258,191 +260,28 @@ function GiziScreen({ custom, animated = false }) {
   )
 }
 
-function MinumScreen({ custom, animated = false }) {
+function BahayaScreen({ custom, animated = false }) {
+  // Define the breakpoint for the phone mode
+  const isPhoneMode = useMediaQuery({ maxWidth: 640 });
+
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Minum <span className="text-cyan-300">air putih</span></AppScreen.Title>
-        {/* <AppScreen.Subtitle>
-          Apa itu kondisi <span className="text-cyan-300">Stunted, Underweight</span>, dan <span className="text-cyan-300">Overweight</span>.
-        </AppScreen.Subtitle> */}
+        <AppScreen.Title>Mari Kita <span className="text-cyan-300">Baca</span></AppScreen.Title>
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-4">
-          <ul
-              role="list"
-              className="mx-auto mt-4 flex max-w-xl flex-wrap justify-center gap-x-10 gap-y-4 lg:mx-0 lg:justify-start"
-            >
-              {[
-                ['minum', minum],
-              ].map(([name, logo, className]) => (
-                <li key={name} className={clsx('flex', className)}>
-                  {/* <Image src={logo} alt={name} className="h-25" unoptimized /> */}
-                  <Image src={logo} alt={name} style={{ width: '300px', height: 'auto' }} unoptimized />
-
-                </li>
-              ))}
-            </ul>
+          {/* Use the "mx-auto" class to center the image */}
+          {/* Use the "w-300" class to limit the width to 300px on larger screens */}
+          {/* Use the "w-full max-w-300" classes to set the width to 100% on phone mode, but with a max width of 300px */}
+          <Image
+            src={bahaya}
+            className={`mx-auto ${isPhoneMode ? 'w-full max-w-300' : 'w-300'}`}
+            width={isPhoneMode ? 300 : 800}
+            height={isPhoneMode ? 300 : 800}
+          />
           <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
             Yuk Baca!
-          </div>
-        </div>
-      </MotionAppScreenBody>
-    </AppScreen>
-  )
-}
-
-
-
-
-
-
-function StocksScreen({ custom, animated = false }) {
-  return (
-    <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Usia 1-2 Tahun</AppScreen.Title>
-        <AppScreen.Subtitle>Persentase porsi makanan</AppScreen.Subtitle>
-      </MotionAppScreenHeader>
-      <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <div className="divide-y divide-gray-100">
-          {[
-            {
-              name: 'Karbohidrat',
-              price: '4,098.01',
-              change: '+4.98%',
-              color: '#F9322C',
-              logo: LaravelLogo,
-            },
-            {
-              name: 'Sayur dan Buah',
-              price: '5,451.10',
-              change: '-3.38%',
-              color: '#5A67D8',
-              logo: TupleLogo,
-            },
-            {
-              name: 'Sumber Hewani',
-              price: '4,098.41',
-              change: '+6.25%',
-              color: '#2A5B94',
-              logo: TransistorLogo,
-            },
-            {
-              name: 'Kacang-Kacangan',
-              price: '250.65',
-              change: '+1.25%',
-              color: '#3320A7',
-              logo: DiageoLogo,
-            },
-            // {
-            //   name: 'StaticKit',
-            //   price: '250.65',
-            //   change: '-3.38%',
-            //   color: '#2A3034',
-            //   logo: StaticKitLogo,
-            // },
-            // {
-            //   name: 'Statamic',
-            //   price: '5,040.85',
-            //   change: '-3.11%',
-            //   color: '#0EA5E9',
-            //   logo: StatamicLogo,
-            // },
-            // {
-            //   name: 'Mirage',
-            //   price: '140.44',
-            //   change: '+9.09%',
-            //   color: '#16A34A',
-            //   logo: MirageLogo,
-            // },
-            // {
-            //   name: 'Reversable',
-            //   price: '550.60',
-            //   change: '-1.25%',
-            //   color: '#8D8D8D',
-            //   logo: ReversableLogo,
-            // },
-          ].map((stock) => (
-            <div key={stock.name} className="flex items-center gap-4 px-4 py-3">
-              <div
-                className="flex-none rounded-full"
-                style={{ backgroundColor: stock.color }}
-              >
-                <stock.logo className="h-10 w-10" />
-              </div>
-              <div className="flex-auto text-sm text-gray-900">
-                {stock.name}
-              </div>
-              <div className="flex-none text-right">
-                <div className="text-sm font-medium text-gray-900">
-                  {stock.price}
-                </div>
-                <div
-                  className={clsx(
-                    'text-xs leading-5',
-                    stock.change.startsWith('+')
-                      ? 'text-cyan-500'
-                      : 'text-gray-500'
-                  )}
-                >
-                  {stock.change}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </MotionAppScreenBody>
-    </AppScreen>
-  )
-}
-
-function InvestScreen({ custom, animated = false }) {
-  return (
-    <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Buy $LA</AppScreen.Title>
-        <AppScreen.Subtitle>
-          <span className="text-white">$34.28</span> per share
-        </AppScreen.Subtitle>
-      </MotionAppScreenHeader>
-      <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <div className="px-4 py-6">
-          <div className="space-y-4">
-            {[
-              { label: 'Number of shares', value: '100' },
-              {
-                label: 'Current market price',
-                value: (
-                  <div className="flex">
-                    $34.28
-                    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
-                      <path
-                        d="M17 15V7H9M17 7 7 17"
-                        stroke="#06B6D4"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                ),
-              },
-              { label: 'Estimated cost', value: '$3,428.00' },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="flex justify-between border-b border-gray-100 pb-4"
-              >
-                <div className="text-sm text-gray-500">{item.label}</div>
-                <div className="text-sm font-semibold text-gray-900">
-                  {item.value}
-                </div>
-              </div>
-            ))}
-            <div className="rounded-lg bg-cyan-500 px-3 py-2 text-center text-sm font-semibold text-white">
-              Buy shares
-            </div>
           </div>
         </div>
       </MotionAppScreenBody>
@@ -592,9 +431,9 @@ function FeaturesMobile() {
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
-              <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
+              <div className="relative mx-auto w-full max-w-[366px]">
                 <feature.screen />
-              </PhoneFrame>
+              </div>
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                 <feature.icon className="h-8 w-8" />
                 <h3 className="mt-6 text-sm font-semibold text-white sm:text-lg">
