@@ -6,7 +6,7 @@ export function NavLinks() {
   let [hoveredIndex, setHoveredIndex] = useState(null)
 
   return [
-    ['Wiki', '#features'],
+    ['Wiki', '#wiki'],
     ['Edukasi', '#reviews'],
     ['Menu', '#pricing'],
     ['Kalkulator', '#calcu'],

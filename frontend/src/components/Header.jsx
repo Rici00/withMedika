@@ -111,7 +111,7 @@ export function Header() {
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-cyan-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
                           <div className="space-y-4">
-                            <MobileNavLink href="#features">
+                            <MobileNavLink href="#wiki">
                               Wiki
                             </MobileNavLink>
                             <MobileNavLink href="#reviews">
@@ -159,4 +159,48 @@ export function Header() {
       </nav>
     </header>
   )
+}
+
+
+import { useMediaQuery } from 'react-responsive';
+
+// ...
+
+function WikiScreen({ custom, animated = false }) {
+  const isPhoneMode = useMediaQuery({ maxWidth: 640 });
+  const largerTextSize = '18px'; // Set the desired larger text size here
+
+  return (
+    <AppScreen className="w-full">
+      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
+      <AppScreen.Title>Mari Kita <span className="text-cyan-300">Baca</span></AppScreen.Title>
+        {/* <AppScreen.Subtitle>
+          Apa itu kondisi <span className="text-cyan-300">Stunted, Underweight</span>, dan <span className="text-cyan-300">Overweight</span>.
+        </AppScreen.Subtitle> */}
+      </MotionAppScreenHeader>
+      <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
+        <div className="px-4 py-4">
+          <div className="space-y-2">
+            {[
+              { label: 'Stunted', value: 'Kondisi pertumbuhan fisik dan perkembangan anak terhambat, sehingga tinggi badan kurang.' },
+              { label: 'Underweight', value: 'Kondisi bobot tubuh anak lebih rendah dari yang dianggap sehat untuk usianya.' },
+              { label: 'Overweight', value: 'Kondisi bobot tubuh anak terlampau besar karena adanya penumpukan lemak.' },
+            ].map((field) => (
+              <div key={field.label}>
+                <div style={{ fontSize: isPhoneMode ? 'inherit' : largerTextSize }} className="text-sm text-cyan-500">
+                  {field.label}
+                </div>
+                <div style={{ fontSize: isPhoneMode ? 'inherit' : largerTextSize }} className="mt-2 border-b border-gray-200 pb-2 text-xs text-gray-1000">
+                  {field.value}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
+            Yuk Baca!
+          </div>
+        </div>
+      </MotionAppScreenBody>
+    </AppScreen>
+  );
 }
