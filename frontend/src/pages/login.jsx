@@ -44,7 +44,7 @@ export default function Login() {
   // ✅ User is logged in ??
   useEffect( () => {
     if ( user ) {
-      router.push('/')
+      router.push('/indexlogin')
     }
   }, [ user ])
   
@@ -57,11 +57,10 @@ export default function Login() {
         title="Sign in to account"
         subtitle={
           <>
-            Don’t have an account?{' '}
+            BUat akun posyandu/pihak kesehatan?{' '}
             <Link href="/register" className="text-cyan-600">
-              Sign up
+              Daftar
             </Link>{' '}
-            for a free trial.
           </>
         }
       >
@@ -90,7 +89,7 @@ export default function Login() {
             />
           </div>
           <Button type="submit" color="cyan" className="mt-8 w-full">
-            Sign in to account
+            Masuk
           </Button>
         </form>
       </AuthLayout>
