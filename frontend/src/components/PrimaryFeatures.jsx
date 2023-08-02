@@ -235,7 +235,7 @@ function CiriScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <div className="px-4 py-4 pt-8">
+        <div className="px-4 py-4">
           {/* Use the "mx-auto" class to center the image */}
           {/* Use the "w-300" class to limit the width to 300px on larger screens */}
           {/* Use the "w-full max-w-300" classes to set the width to 100% on phone mode, but with a max width of 300px */}
