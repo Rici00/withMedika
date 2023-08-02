@@ -75,8 +75,7 @@ function DeviceUserIcon(props) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M5 4a4 4 0 014-4h14a4 4 0 014 4v24a4.002 4.002 0 01-3.01 3.877c-.535.136-.99-.325-.99-.877s.474-.98.959-1.244A2 2 0 0025 28V4a2 2 0 00-2-2h-1
-        .382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 001.041 1.756C8.525 30.02 9 30.448 9 31s-.455 1.013-.99.877A4.002 4.002 0 015 28V4z"
+        d="M5 4a4 4 0 014-4h14a4 4 0 014 4v24a4.002 4.002 0 01-3.01 3.877c-.535.136-.99-.325-.99-.877s.474-.98.959-1.244A2 2 0 0025 28V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 001.041 1.756C8.525 30.02 9 30.448 9 31s-.455 1.013-.99.877A4.002 4.002 0 015 28V4z"
         fill="#A3A3A3"
       />
     </svg>
@@ -144,10 +143,10 @@ function DeviceTouchIcon(props) {
 const headerAnimation = {
   initial: { opacity: 0, transition: { duration: 0.3 } },
   animate: { opacity: 1, transition: { duration: 0.3, delay: 0.3 } },
-  exit: { opacity: 0, transition: { duration: 0.3 } },
+  exit: { opacity: 0, transition: { duration: 0.1 } },
 }
 
-const maxZIndex = 2147483647
+const maxZIndex = 2147
 
 const bodyVariantBackwards = {
   opacity: 0.4,
@@ -159,7 +158,7 @@ const bodyVariantBackwards = {
 }
 
 const bodyVariantForwards = (custom) => ({
-  y: '100%',
+  y: '20%',
   zIndex: maxZIndex - custom.changeCount,
   transition: { duration: 0.4 },
 })
@@ -222,27 +221,27 @@ function GiziScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Porsi <span className="text-cyan-300">Gizi</span></AppScreen.Title>
+        <AppScreen.Title>Mari Kita <span className="text-cyan-300">Baca</span></AppScreen.Title>
         {/* <AppScreen.Subtitle>
           Apa itu kondisi <span className="text-cyan-300">Stunted, Underweight</span>, dan <span className="text-cyan-300">Overweight</span>.
         </AppScreen.Subtitle> */}
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-4">
-          <ul
-              role="list"
-              className="mx-auto mt-4 flex max-w-xl flex-wrap justify-center gap-x-10 gap-y-4 lg:mx-0 lg:justify-start"
-            >
-              {[
-                ['isipiring', isiPiring],
-              ].map(([name, logo, className]) => (
-                <li key={name} className={clsx('flex', className)}>
-                  {/* <Image src={logo} alt={name} className="h-25" unoptimized /> */}
-                  <Image src={logo} alt={name} style={{ width: '300px', height: 'auto' }} unoptimized />
-
-                </li>
-              ))}
-            </ul>
+          <div className="space-y-2">
+            {[
+              { label: 'Stunted', value: 'Kondisi pertumbuhan fisik dan perkembangan anak terhambat, sehingga tinggi badan kurang.' },
+              { label: 'Underweight', value: 'Kondisi bobot tubuh anak lebih rendah dari yang dianggap sehat untuk usianya.' },
+              { label: 'Overweight', value: 'Kondisi bobot tubuh anak terlampau besar karena adanya penumpukan lemak.' },
+            ].map((field) => (
+              <div key={field.label}>
+                <div className="text-sm text-cyan-500">{field.label}</div>
+                <div className="mt-2 border-b border-gray-200 pb-2 text-xs text-gray-1000">
+                  {field.value}
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
             Yuk Baca!
           </div>
@@ -291,105 +290,105 @@ function MinumScreen({ custom, animated = false }) {
 
 
 
-// function StocksScreen({ custom, animated = false }) {
-//   return (
-//     <AppScreen className="w-full">
-//       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-//         <AppScreen.Title>Usia 1-2 Tahun</AppScreen.Title>
-//         <AppScreen.Subtitle>Persentase porsi makanan</AppScreen.Subtitle>
-//       </MotionAppScreenHeader>
-//       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-//         <div className="divide-y divide-gray-100">
-//           {[
-//             {
-//               name: 'Karbohidrat',
-//               price: '4,098.01',
-//               change: '+4.98%',
-//               color: '#F9322C',
-//               logo: LaravelLogo,
-//             },
-//             {
-//               name: 'Sayur dan Buah',
-//               price: '5,451.10',
-//               change: '-3.38%',
-//               color: '#5A67D8',
-//               logo: TupleLogo,
-//             },
-//             {
-//               name: 'Sumber Hewani',
-//               price: '4,098.41',
-//               change: '+6.25%',
-//               color: '#2A5B94',
-//               logo: TransistorLogo,
-//             },
-//             {
-//               name: 'Kacang-Kacangan',
-//               price: '250.65',
-//               change: '+1.25%',
-//               color: '#3320A7',
-//               logo: DiageoLogo,
-//             },
-//             // {
-//             //   name: 'StaticKit',
-//             //   price: '250.65',
-//             //   change: '-3.38%',
-//             //   color: '#2A3034',
-//             //   logo: StaticKitLogo,
-//             // },
-//             // {
-//             //   name: 'Statamic',
-//             //   price: '5,040.85',
-//             //   change: '-3.11%',
-//             //   color: '#0EA5E9',
-//             //   logo: StatamicLogo,
-//             // },
-//             // {
-//             //   name: 'Mirage',
-//             //   price: '140.44',
-//             //   change: '+9.09%',
-//             //   color: '#16A34A',
-//             //   logo: MirageLogo,
-//             // },
-//             // {
-//             //   name: 'Reversable',
-//             //   price: '550.60',
-//             //   change: '-1.25%',
-//             //   color: '#8D8D8D',
-//             //   logo: ReversableLogo,
-//             // },
-//           ].map((stock) => (
-//             <div key={stock.name} className="flex items-center gap-4 px-4 py-3">
-//               <div
-//                 className="flex-none rounded-full"
-//                 style={{ backgroundColor: stock.color }}
-//               >
-//                 <stock.logo className="h-10 w-10" />
-//               </div>
-//               <div className="flex-auto text-sm text-gray-900">
-//                 {stock.name}
-//               </div>
-//               <div className="flex-none text-right">
-//                 <div className="text-sm font-medium text-gray-900">
-//                   {stock.price}
-//                 </div>
-//                 <div
-//                   className={clsx(
-//                     'text-xs leading-5',
-//                     stock.change.startsWith('+')
-//                       ? 'text-cyan-500'
-//                       : 'text-gray-500'
-//                   )}
-//                 >
-//                   {stock.change}
-//                 </div>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </MotionAppScreenBody>
-//     </AppScreen>
-//   )
-// }
+function StocksScreen({ custom, animated = false }) {
+  return (
+    <AppScreen className="w-full">
+      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
+        <AppScreen.Title>Usia 1-2 Tahun</AppScreen.Title>
+        <AppScreen.Subtitle>Persentase porsi makanan</AppScreen.Subtitle>
+      </MotionAppScreenHeader>
+      <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
+        <div className="divide-y divide-gray-100">
+          {[
+            {
+              name: 'Karbohidrat',
+              price: '4,098.01',
+              change: '+4.98%',
+              color: '#F9322C',
+              logo: LaravelLogo,
+            },
+            {
+              name: 'Sayur dan Buah',
+              price: '5,451.10',
+              change: '-3.38%',
+              color: '#5A67D8',
+              logo: TupleLogo,
+            },
+            {
+              name: 'Sumber Hewani',
+              price: '4,098.41',
+              change: '+6.25%',
+              color: '#2A5B94',
+              logo: TransistorLogo,
+            },
+            {
+              name: 'Kacang-Kacangan',
+              price: '250.65',
+              change: '+1.25%',
+              color: '#3320A7',
+              logo: DiageoLogo,
+            },
+            // {
+            //   name: 'StaticKit',
+            //   price: '250.65',
+            //   change: '-3.38%',
+            //   color: '#2A3034',
+            //   logo: StaticKitLogo,
+            // },
+            // {
+            //   name: 'Statamic',
+            //   price: '5,040.85',
+            //   change: '-3.11%',
+            //   color: '#0EA5E9',
+            //   logo: StatamicLogo,
+            // },
+            // {
+            //   name: 'Mirage',
+            //   price: '140.44',
+            //   change: '+9.09%',
+            //   color: '#16A34A',
+            //   logo: MirageLogo,
+            // },
+            // {
+            //   name: 'Reversable',
+            //   price: '550.60',
+            //   change: '-1.25%',
+            //   color: '#8D8D8D',
+            //   logo: ReversableLogo,
+            // },
+          ].map((stock) => (
+            <div key={stock.name} className="flex items-center gap-4 px-4 py-3">
+              <div
+                className="flex-none rounded-full"
+                style={{ backgroundColor: stock.color }}
+              >
+                <stock.logo className="h-10 w-10" />
+              </div>
+              <div className="flex-auto text-sm text-gray-900">
+                {stock.name}
+              </div>
+              <div className="flex-none text-right">
+                <div className="text-sm font-medium text-gray-900">
+                  {stock.price}
+                </div>
+                <div
+                  className={clsx(
+                    'text-xs leading-5',
+                    stock.change.startsWith('+')
+                      ? 'text-cyan-500'
+                      : 'text-gray-500'
+                  )}
+                >
+                  {stock.change}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </MotionAppScreenBody>
+    </AppScreen>
+  )
+}
 
 function InvestScreen({ custom, animated = false }) {
   return (
@@ -510,10 +509,10 @@ function FeaturesDesktop() {
           <CircleBackground color="#13B5C8" className="animate-spin-slower" />
         </div>
           <Tab.Panels as={Fragment}>
-            <AnimatePresence
+            {/* <AnimatePresence
               initial={false}
               custom={{ isForwards, changeCount }}
-            >
+            > */}
               {features.map((feature, featureIndex) =>
                 selectedIndex === featureIndex ? (
                   <Tab.Panel
@@ -528,7 +527,7 @@ function FeaturesDesktop() {
                   </Tab.Panel>
                 ) : null
               )}
-            </AnimatePresence>
+            {/* </AnimatePresence> */}
           </Tab.Panels>
       </div>
     </Tab.Group>

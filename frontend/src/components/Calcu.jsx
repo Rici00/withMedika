@@ -593,11 +593,14 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
   }
 
   export function Calcu() {
-    const [umur, setUmur] = useState(0);
+    const [anak, setAnak] = useState();
+    const [ibu, setIbu] = useState();
+    const [umur, setUmur] = useState();
+    const [alamat, setAlamat] = useState();
     const [jenisKelamin, setJenisKelamin] = useState('Laki-laki');
-    const [tinggiBadan, setTinggiBadan] = useState(0);
+    const [tinggiBadan, setTinggiBadan] = useState();
     const [hasilPenilaian, setHasilPenilaian] = useState('');
-    const [isShowResult, setIsShowResult] = useState(false);
+    // const [isShowResult, setIsShowResult] = useState(false);
 
     async function handleSubmit(event) {
       event.preventDefault();
@@ -623,9 +626,13 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
     
       const data = {
         No: "INCREMENT",
+        
         Umur: umur,
         jenisKelamin: jenisKelamin,
         tinggiBadan: tinggiBadan,
+        anak: anak,
+        ibu: ibu,
+        alamat:alamat,
         hasilPenilaian: hasilPenilaian
       };
     
@@ -654,44 +661,104 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       <section
       id="calcu"
       aria-labelledby="calcu"
-      className="border-t border-gray-200 bg-gray-100 py-20 sm:py-32"
+      className="border-t border-gray-200 bg-cyan-100 py-20 sm:py-32"
     >
-      <Container>\
-        <div className='bg-slate-100'>
+      <Container>
+        <div className='bg-cyan-100 m-6 rounded-sm'>
+          <div className='text-4xl font-medium text-center text-gray-900'>
         <h1>Kalkulator Gizi</h1>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="umur">Umur (bulan):</label>
-          <input type="number" id="umur" value={umur} onChange={(e) => setUmur(e.target.value)} required />
-          <br />
-  
-          <label htmlFor="jenisKelamin">Jenis Kelamin:</label>
-          <select id="jenisKelamin" value={jenisKelamin} onChange={(e) => setJenisKelamin(e.target.value)} required>
-            <option value="Laki-laki">Laki-laki</option>
-            <option value="Perempuan">Perempuan</option>
-          </select>
-          <br />
+        <p className="mt-2 text-lg text-gray-600 sm:text-center">
+            Ketahui Kondisi Gizi Anak Anda        </p>
+        </div>
+        <form onSubmit={handleSubmit} className=" mx-auto my-8 p-4 bg-white shadow-md rounded-md">
+        <div className="mb-4">
+    <label htmlFor="anak" className="block font-medium text-gray-700">Nama Anak : </label>
+    <input
+      type="text"
+      id="anak"
+      value={anak}
+      onChange={(e) => setAnak(e.target.value)}
+      required
+      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
+    />
+  </div>
+  <div className="mb-4">
+    <label htmlFor="ibu" className="block font-medium text-gray-700">Nama Ibu : </label>
+    <input
+      type="text"
+      id="ibu"
+      value={ibu}
+      onChange={(e) => setIbu(e.target.value)}
+      required
+      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
+    />
+  </div>
+  <div className="mb-4">
+    <label htmlFor="umur" className="block font-medium text-gray-700">Umur (bulan):</label>
+    <input
+      type="number"
+      id="umur"
+      value={umur}
+      onChange={(e) => setUmur(e.target.value)}
+      required
+      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
+    />
+  </div>
 
-          <label htmlFor="tinggiBadan">Tinggi Badan (cm):</label>
-          <input
-            type="number"
-            id="tinggiBadan"
-            value={tinggiBadan}
-            onChange={(e) => setTinggiBadan(e.target.value)}
-            required
-          />
-          <br />
+  <div className="mb-4">
+    <label htmlFor="jenisKelamin" className="block font-medium text-gray-700">Jenis Kelamin:</label>
+    <select
+      id="jenisKelamin"
+      value={jenisKelamin}
+      onChange={(e) => setJenisKelamin(e.target.value)}
+      required
+      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
+    >
+      <option value="Laki-laki">Laki-laki</option>
+      <option value="Perempuan">Perempuan</option>
+    </select>
+  </div>
+
+  <div className="mb-4">
+    <label htmlFor="tinggiBadan" className="block font-medium text-gray-700">Tinggi Badan (cm):</label>
+    <input
+      type="number"
+      id="tinggiBadan"
+      value={tinggiBadan}
+      onChange={(e) => setTinggiBadan(e.target.value)}
+      required
+      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
+    />
+  </div>
+  <div className="mb-4">
+    <label htmlFor="alamat" className="block font-medium text-gray-700">Alamat : </label>
+    <input
+      type="text"
+      id="alamat"
+      value={alamat}
+      onChange={(e) => setAlamat(e.target.value)}
+      required
+      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
+    />
+  </div>
+
+  <button
+    type="submit"
+    className="w-full py-3 mt-4 bg-cyan-500 hover:bg-cyan-600 focus:ring focus:ring-cyan-200 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-opacity-50"
+  >
+    Hitung
+  </button>
+</form>
+
   
-          <button type="submit">Hitung</button>
-        </form>
-  
-        {hasilPenilaian && <p>Hasil Penilaian Gizi: {hasilPenilaian}</p>}
+        {/* {hasilPenilaian && <p>Hasil Penilaian Gizi: {hasilPenilaian}</p>} */}
         {/* </>
       </> */}
       <div className="w-11/12 max-w-5xl mx-auto py-32">
   { hasilPenilaian === 'Stunted' ? (
     <>
-    <div classname="">
-      <h1 className="md:text-h1 text-h2 font-bold mb-16 text-center drop-shadow-2xl">
+    <div classname="bg-gradient-to-r from-indigo-600 to-purple-800 py-16">
+      <h1 className="md:text-5xl text-4xl font-bold mb-16 text-center">
         🔎{' '}
         <span className="text-transparent bg-clip-text bg-black capitalize">
           {hasilPenilaian}
@@ -705,7 +772,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            🤔 What is it?
+            🤔 Apa Itu Stunting??
           </h2>
           <p
             className="text-b-lg font-thin text-neutral-100"
@@ -719,7 +786,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
                   data-aos-delay={300 + idx * 100}
                   key={description}
                   // className="py-2 px-6 text-b-sm bg-purple-900 rounded-3xl drop-shadow-xl text-neutral-100 font-thin "
-                  className="text-b-lg text-black"
+                  className="text-b-lg font-medium text-black"
                 >
                   {description}
                 </span>
@@ -743,7 +810,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
                   data-aos="flip-right"
                   data-aos-delay={300 + idx * 100}
                   key={symptom}
-                  className="py-2 px-6 text-b-sm bg-purple-900 rounded-3xl drop-shadow-xl text-neutral-100 font-thin"
+                  className="py-2 px-6 text-b-sm bg-cyan-200 font-medium rounded-3xl drop-shadow-xl text-black"
                 >
                   {symptom}
                 </span>
@@ -766,7 +833,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
                   data-aos="flip-left"
                   data-aos-delay={300 + idx * 100}
                   key={precaution}
-                  className="py-2 px-6 text-b-sm bg-purple-900 rounded-3xl drop-shadow-xl text-neutral-100 font-thin"
+                  className="py-2 px-6 text-b-sm bg-cyan-200 rounded-3xl drop-shadow-xl text-black font-medium"
                 >
                   {precaution}
                 </span>
@@ -790,136 +857,12 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
                     data-aos="fade-up"
                     data-aos-delay={300 + idx * 200}
                     key={doctor.name}
-                    className="px-8 py-12 bg-purple-900 rounded-3xl drop-shadow-2xl"
+                    className="px-8 py-12 bg-cyan-200 rounded-3xl drop-shadow-2xl"
                   >
-                    <h3 className="text-h4 text-neutral-50 italic mb-4 text-center font-bold">
+                    <h3 className="text-h4 text-slate-900 italic mb-4 text-center font-bold">
                       {doctor.name}
                     </h3>
-                    <p className="font-light text-b-md">{doctor.description}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        data-aos="fade"
-        data-aos-duration="1000"
-        className="col-span-5 text-b-lg text-center italic text-neutral-50 mt-8 animate-pulse duration-1000"
-      >
-        Note that this result is not 100% accurate. For further helps, please refer to the nearest health care.
-      </div>
-      </div>
-    </>
-  ) : hasilPenilaian === 'Severely Stunted' ? (
-    <>
-    <div classname="">
-      <h1 className="md:text-h1 text-h2 font-bold mb-16 text-center drop-shadow-2xl">
-        🔎{' '}
-        <span className="text-transparent bg-clip-text bg-black capitalize">
-          {hasilPenilaian}
-        </span>{' '}
-        🔍
-      </h1>
-
-        <div className="md:text-h1 text-h2 font-bold mb-16 text-center drop-shadow-2xl">
-          <h2
-            className="text-b-xl font-bold mb-2"
-            data-aos="fade-up"
-            data-aos-duration="500"
-          >
-            🤔 What is it?
-          </h2>
-          <p
-            className="text-b-lg font-thin text-neutral-100"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            {dataSeverestunting.description.map((description, idx) => {
-              return (
-                <span
-                  data-aos="flip-right"
-                  data-aos-delay={300 + idx * 100}
-                  key={description}
-                  // className="py-2 px-6 text-b-sm bg-purple-900 rounded-3xl drop-shadow-xl text-neutral-100 font-thin "
-                  className="text-b-lg text-black"
-                >
-                  {description}
-                </span>
-              );
-            })}
-          </p>
-        </div>
-        <div className="grid grid-cols-5 my-16 gap-16">
-        <div className="col-span-5 md:col-span-3">
-          <h2
-            className="text-b-xl font-bold mb-2"
-            data-aos="fade-up"
-            data-aos-duration="500"
-          >
-            😷 What are the symptoms?
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {dataSeverestunting.symptoms.map((symptom, idx) => {
-              return (
-                <span
-                  data-aos="flip-right"
-                  data-aos-delay={300 + idx * 100}
-                  key={symptom}
-                  className="py-2 px-6 text-b-sm bg-purple-900 rounded-3xl drop-shadow-xl text-neutral-100 font-thin"
-                >
-                  {symptom}
-                </span>
-              );
-            })}
-          </div>
-        </div>
-        <div className="col-span-5">
-          <h2
-            className="text-b-xl font-bold mb-2"
-            data-aos="fade-up"
-            data-aos-duration="500"
-          >
-            😷 How to prevent it from getting worse?
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {dataSeverestunting.precautions.map((precaution, idx) => {
-              return (
-                <span
-                  data-aos="flip-left"
-                  data-aos-delay={300 + idx * 100}
-                  key={precaution}
-                  className="py-2 px-6 text-b-sm bg-purple-900 rounded-3xl drop-shadow-xl text-neutral-100 font-thin"
-                >
-                  {precaution}
-                </span>
-              );
-            })}
-          </div>
-        </div>
-        <div className="col-span-5">
-          <div className="w-full">
-            <h2
-              className="text-b-xl font-bold mb-2"
-              data-aos="fade"
-              data-aos-duration="500"
-            >
-              👨‍⚕️ Where should I check it?
-            </h2>
-            <div className="flex md:flex-row flex-col gap-4">
-              {dataSeverestunting.doctors.map((doctor, idx) => {
-                return (
-                  <div
-                    data-aos="fade-up"
-                    data-aos-delay={300 + idx * 200}
-                    key={doctor.name}
-                    className="px-8 py-12 bg-purple-900 rounded-3xl drop-shadow-2xl"
-                  >
-                    <h3 className="text-h4 text-neutral-50 italic mb-4 text-center font-bold">
-                      {doctor.name}
-                    </h3>
-                    <p className="font-light text-b-md">{doctor.description}</p>
+                    <p className="font-normal text-b-md">{doctor.description}</p>
                   </div>
                 );
               })}
@@ -941,7 +884,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
    : hasilPenilaian === 'Normal' ? (
     <>
     <div classname="">
-      <h1 className="md:text-h1 text-h2 font-bold mb-16 text-center drop-shadow-2xl">
+      <h1 className="md:text-5xl text-4xl font-bold mb-16 text-center">
         🔎{' '}
         <span className="text-transparent bg-clip-text bg-black capitalize">
           {hasilPenilaian}
@@ -955,10 +898,10 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            🤔 What is it?
+            🤔 Apa Itu Kondisi Normal??
           </h2>
           <p
-            className="text-b-lg font-thin text-neutral-100"
+            className="text-b-lg font-medium text-neutral-100"
             data-aos="fade-up"
             data-aos-delay="300"
           >
@@ -984,7 +927,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 What are the symptoms?
+            😷 Apa Gejalanya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataNormal.symptoms.map((symptom, idx) => {
@@ -993,7 +936,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
                   data-aos="flip-right"
                   data-aos-delay={300 + idx * 100}
                   key={symptom}
-                  className="py-2 px-6 text-b-sm bg-purple-900 rounded-3xl drop-shadow-xl text-neutral-100 font-thin"
+                  className="py-2 px-6 text-b-sm bg-cyan-200 rounded-3xl drop-shadow-xl text-black font-normal"
                 >
                   {symptom}
                 </span>
@@ -1016,7 +959,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
                   data-aos="flip-left"
                   data-aos-delay={300 + idx * 100}
                   key={precaution}
-                  className="py-2 px-6 text-b-sm bg-purple-900 rounded-3xl drop-shadow-xl text-neutral-100 font-thin"
+                  className="py-2 px-6 text-b-sm bg-cyan-200 rounded-3xl drop-shadow-xl text-black font-normal"
                 >
                   {precaution}
                 </span>
@@ -1040,12 +983,137 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
                     data-aos="fade-up"
                     data-aos-delay={300 + idx * 200}
                     key={doctor.name}
-                    className="px-8 py-12 bg-purple-900 rounded-3xl drop-shadow-2xl"
+                    className="px-8 py-12 bg-cyan-200 rounded-3xl drop-shadow-2xl"
                   >
-                    <h3 className="text-h4 text-neutral-50 italic mb-4 text-center font-bold">
+                    <h3 className="text-h4 text-slate-900 italic mb-4 text-center font-bold">
                       {doctor.name}
                     </h3>
                     <p className="font-light text-b-md">{doctor.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-aos="fade"
+        data-aos-duration="1000"
+        className="col-span-5 text-b-lg text-center italic text-neutral-50 mt-8 animate-pulse duration-1000"
+      >
+        Note that this result is not 100% accurate. For further helps, please refer to the nearest health care.
+      </div>
+      </div>
+    </>
+  )
+  : hasilPenilaian === 'Severely Stunted' ? (
+    <>
+    <div classname="">
+      <h1 className="md:text-5xl text-4xl font-bold mb-16 text-center">
+        🔎{' '}
+        <span className="text-transparent bg-clip-text bg-black capitalize">
+          {hasilPenilaian}
+        </span>{' '}
+        🔍
+      </h1>
+
+        <div className="md:text-h1 text-h2 font-bold mb-16 text-center drop-shadow-2xl">
+          <h2
+            className="text-b-xl font-bold mb-2"
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
+            🤔 Apa Itu Severely Stunted??
+          </h2>
+          <p
+            className="text-b-lg font-thin text-neutral-100"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            {dataSeverestunting.description.map((description, idx) => {
+              return (
+                <span
+                  data-aos="flip-right"
+                  data-aos-delay={300 + idx * 100}
+                  key={description}
+                  // className="py-2 px-6 text-b-sm bg-purple-900 rounded-3xl drop-shadow-xl text-neutral-100 font-thin "
+                  className="text-b-lg font-medium text-black"
+                >
+                  {description}
+                </span>
+              );
+            })}
+          </p>
+        </div>
+        <div className="grid grid-cols-5 my-16 gap-16">
+        <div className="col-span-5 md:col-span-3">
+          <h2
+            className="text-b-xl font-bold mb-2"
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
+            😷 Apa Gejalanya??
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {dataSeverestunting.symptoms.map((symptom, idx) => {
+              return (
+                <span
+                  data-aos="flip-right"
+                  data-aos-delay={300 + idx * 100}
+                  key={symptom}
+                  className="py-2 px-6 text-b-sm bg-cyan-200 rounded-3xl drop-shadow-xl text-black font-normal"
+                >
+                  {symptom}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+        <div className="col-span-5">
+          <h2
+            className="text-b-xl font-bold mb-2"
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
+            😷 How to prevent it from getting worse?
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {dataSeverestunting.precautions.map((precaution, idx) => {
+              return (
+                <span
+                  data-aos="flip-left"
+                  data-aos-delay={300 + idx * 100}
+                  key={precaution}
+                  className="py-2 px-6 text-b-sm bg-cyan-200 rounded-3xl drop-shadow-xl text-black font-normal"
+                >
+                  {precaution}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+        <div className="col-span-5">
+          <div className="w-full">
+            <h2
+              className="text-b-xl font-bold mb-2"
+              data-aos="fade"
+              data-aos-duration="500"
+            >
+              👨‍⚕️ Where should I check it?
+            </h2>
+            <div className="flex md:flex-row flex-col gap-4">
+              {dataSeverestunting.doctors.map((doctor, idx) => {
+                return (
+                  <div
+                    data-aos="fade-up"
+                    data-aos-delay={300 + idx * 200}
+                    key={doctor.name}
+                    className="px-8 py-12 bg-cyan-200 rounded-3xl drop-shadow-2xl"
+                  >
+                    <h3 className="text-h4 text-slate-900 italic mb-4 text-center font-bold">
+                      {doctor.name}
+                    </h3>
+                    <p className="font-normal text-b-md">{doctor.description}</p>
                   </div>
                 );
               })}
