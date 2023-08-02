@@ -391,7 +391,7 @@ export function Hero() {
               ].map(([name, logo, className]) => (
                 <li key={name} className={clsx('flex', className)}>
                   {/* <Image src={logo} alt={name} className="h-25" unoptimized /> */}
-                  <Image src={logo} alt={name} style={{ width: '80px', height: 'auto' }} unoptimized />
+                  <Image src={logo} alt={name} style={{ width: '60px', height: 'auto' }} unoptimized />
 
                 </li>
               ))}
