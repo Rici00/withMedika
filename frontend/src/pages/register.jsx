@@ -115,7 +115,7 @@ export default function Register() {
             </SelectField>
           </div>
           <Button type="submit" color="cyan" className="mt-8 w-full">
-            Sign Up
+            Daftar
           </Button>
         </form>
       </AuthLayout>
