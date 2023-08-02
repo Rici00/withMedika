@@ -110,14 +110,12 @@ export default function Register() {
               id="referral-source"
               name="referral_source"
             >
-              <option value={`AltaVista search`}>AltaVista search</option>
-              <option value={`Super Bowl commercial`}>Super Bowl commercial</option>
-              <option value={`Our route 34 city bus ad`}>Our route 34 city bus ad</option>
-              <option value={`The “Never Use This” podcast`}>The “Never Use This” podcast</option>
+              <option value={`KKN PPM UGM`}>KKN PPM UGM</option>
+              <option value={`Membangun Mandalika 2023`}>Membangun Mandalika 2023</option>
             </SelectField>
           </div>
           <Button type="submit" color="cyan" className="mt-8 w-full">
-            Get started today
+            Sign Up
           </Button>
         </form>
       </AuthLayout>
