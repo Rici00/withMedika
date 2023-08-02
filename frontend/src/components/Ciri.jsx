@@ -21,15 +21,16 @@ export function Ciri() {
   
             {/* Right Column with Text */}
             <div className="md:w-1/2 mt-8 md:mt-0 md:ml-16 text-center md:text-right">
-              <h1 className="text-8xl font-medium tracking-tight text-white">
+              <h2 className="text-4xl md:text-7xl font-medium tracking-tight text-white"> {/* Added md:text-4xl for smaller screens */}
                 Kenali Cirinya!
-              </h1>
+              </h2>
             </div>
           </div>
         </Container>
       </section>
     );
   }
+  
   
   
   
