@@ -425,13 +425,13 @@ function FeaturesMobile() {
               <div className="relative mx-auto w-full h-full max-w-[366px]">
                 <feature.screen />
               </div>
-              <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
-                {/* <h3 className="mt-6 text-sm font-semibold text-white sm:text-lg">
+              <div className="inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
+                <h3 className="mt-6 text-sm font-semibold text-white sm:text-lg">
                   {feature.name}
                 </h3>
                 <p className="mt-2 text-sm text-gray-400">
                   {feature.description}
-                </p> */}
+                </p>
               </div>
             </div>
           </div>
