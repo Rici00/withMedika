@@ -46,18 +46,18 @@ export default function Register() {
   return (
     <>
       <Head>
-        <title>Sign Up - Pocket</title>
+        <title>Daftar</title>
       </Head>
 
       <AuthLayout
         title="Sign up for an account"
         subtitle={
           <>
-            Already registered?{' '}
+            Sudah punya akun?{' '}
             <Link href="/login" className="text-cyan-600">
-              Sign in
+              Masuk
             </Link>{' '}
-            to your account.
+            ke akun anda
           </>
         }
       >
