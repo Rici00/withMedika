@@ -1,6 +1,8 @@
 import { useId } from 'react'
 
 import { Container } from '@/components/Container'
+import Image from 'next/image'
+import clsx from 'clsx'
 
 const features = [
   {
@@ -186,7 +188,7 @@ function DeviceChartIcon(props) {
   )
 }
 
-export function SecondaryFeatures() {
+export function Ciri() {
   return (
     <section
       id="secondary-features"

@@ -10,7 +10,7 @@ import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { Reviews } from '@/components/Reviews'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
-
+import { Ciri } from '@/components/Ciri'
 
 export default function Home() {
   return (
@@ -27,8 +27,9 @@ export default function Home() {
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />
+        <Ciri />
         <CallToAction />
-        <Reviews />
+        {/* <Reviews /> */}
         {/* <Pricing /> */}
         <Calcu />
       </main>
