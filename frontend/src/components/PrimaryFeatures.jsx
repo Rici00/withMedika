@@ -6,27 +6,13 @@ import { useDebouncedCallback } from 'use-debounce'
 import Image from 'next/image'
 import { useMediaQuery } from 'react-responsive';
 
-import isiPiring from '@/images/logos/isipiring.png'
-import minum from '@/images/logos/minum.png'
+
 import ciri from '@/images/logos/ciri2.png'
 import bahaya from '@/images/logos/bahaya.png'
-import olahraga from '@/images/logos/olahraga.png'
-import cuciTangan from '@/images/logos/cucitangan.png'
-import bbc from '@/images/logos/bbc.svg'
 import { AppScreen } from '@/components/AppScreen'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
 import { PhoneFrame } from '@/components/PhoneFrame'
-import {
-  DiageoLogo,
-  LaravelLogo,
-  MirageLogo,
-  ReversableLogo,
-  StatamicLogo,
-  StaticKitLogo,
-  TransistorLogo,
-  TupleLogo,
-} from '@/components/StockLogos'
 
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
@@ -43,33 +29,18 @@ const features = [
   {
     name: 'Ketahui ciri-ciri stunting pada anak',
     description:
-      'Lorem ipsum',
+      'Beberapa indikasi ini bisa menjadi ciri-ciri anak yang berkondisi stunting',
     icon: DeviceUserIcon,
     screen: CiriScreen,
   },
   {
     name: 'Waspada akan bahaya stunting pada anak',
     description:
-      'Lorem ipsum',
+      'Ada banyak kerugian yang ditimbulkan jika anak terkena stunting',
     icon: DeviceUserIcon,
     screen: BahayaScreen,
   },
 
-
-  // {
-  //   name: 'otw edit',
-  //   description:
-  //     'mikir dulu isi kontennya ya bosque',
-  //   icon: DeviceNotificationIcon,
-  //   screen: StocksScreen,
-  // },
-  // {
-  //   name: 'otw buat juga kontennya',
-  //   description:
-  //     'masi mikir mikir, bingung mau nulis apa soalnya bingung',
-  //   icon: DeviceTouchIcon,
-  //   screen: InvestScreen,
-  // },
 ]
 
 function DeviceUserIcon(props) {
@@ -230,25 +201,18 @@ function WikiScreen({ custom, animated = false }) {
 }
 
 function CiriScreen({ custom, animated = false }) {
-  // Define the breakpoint for the phone mode
   const isPhoneMode = useMediaQuery({ maxWidth: 640 });
 
   return (
     <AppScreen className="w-full h-full md:translate-y-12">
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-4 ">
-          {/* Use the "mx-auto" class to center the image */}
-          {/* Use the "w-300" class to limit the width to 300px on larger screens */}
-          {/* Use the "w-full max-w-300" classes to set the width to 100% on phone mode, but with a max width of 300px */}
           <Image
             src={ciri}
             className={`mx-auto ${isPhoneMode ? 'w-full max-w-300' : 'w-300'}`}
             width={isPhoneMode ? 300 : 800}
             height={isPhoneMode ? 300 : 800}
           />
-          {/* <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
-            Yuk Baca!
-          </div> */}
         </div>
       </MotionAppScreenBody>
     </AppScreen>
@@ -256,25 +220,18 @@ function CiriScreen({ custom, animated = false }) {
 }
 
 function BahayaScreen({ custom, animated = false }) {
-  // Define the breakpoint for the phone mode
   const isPhoneMode = useMediaQuery({ maxWidth: 640 });
 
   return (
     <AppScreen className="w-full md:translate-y-12">
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-4">
-          {/* Use the "mx-auto" class to center the image */}
-          {/* Use the "w-300" class to limit the width to 300px on larger screens */}
-          {/* Use the "w-full max-w-300" classes to set the width to 100% on phone mode, but with a max width of 300px */}
           <Image
             src={bahaya}
             className={`mx-auto ${isPhoneMode ? 'w-full max-w-300' : 'w-300'}`}
             width={isPhoneMode ? 300 : 800}
             height={isPhoneMode ? 300 : 800}
           />
-          {/* <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-xs font-semibold text-white">
-            Yuk Baca!
-          </div> */}
         </div>
       </MotionAppScreenBody>
     </AppScreen>
