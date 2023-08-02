@@ -50,7 +50,7 @@ export default function Register() {
       </Head>
 
       <AuthLayout
-        title="Sign up for an account"
+        title="Daftarkan akun khusus untuk membantu Anda"
         subtitle={
           <>
             Sudah punya akun?{' '}

@@ -54,7 +54,7 @@ export default function Login() {
         <title>Masuk sebagai tenaga kesehatan</title>
       </Head>
       <AuthLayout
-        title="Sign in to account"
+        title="Masuk ke Akun Khusus"
         subtitle={
           <>
             Buat akun posyandu/pihak kesehatan?{' '}
