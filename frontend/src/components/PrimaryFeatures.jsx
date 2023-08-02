@@ -197,26 +197,23 @@ const bodyAnimation = {
 
 function WikiScreen({ custom, animated = false }) {
   const isPhoneMode = useMediaQuery({ maxWidth: 640 });
+  const largerTextSize = '20px'; // Set the desired larger text size here
 
   return (
     <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Mari Kita <span className="text-cyan-300">Baca</span></AppScreen.Title>
-        {/* <AppScreen.Subtitle>
-          Apa itu kondisi <span className="text-cyan-300">Stunted, Underweight</span>, dan <span className="text-cyan-300">Overweight</span>.
-        </AppScreen.Subtitle> */}
-      </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <div className="px-4 py-4">
-          <div className="space-y-2">
+        <div className="px-8 py-8">
+          <div className="space-y-4">
             {[
               { label: 'Stunted', value: 'Kondisi pertumbuhan fisik dan perkembangan anak terhambat, sehingga tinggi badan kurang.' },
               { label: 'Underweight', value: 'Kondisi bobot tubuh anak lebih rendah dari yang dianggap sehat untuk usianya.' },
               { label: 'Overweight', value: 'Kondisi bobot tubuh anak terlampau besar karena adanya penumpukan lemak.' },
             ].map((field) => (
               <div key={field.label}>
-                <div className="text-sm text-cyan-500">{field.label}</div>
-                <div className="mt-2 border-b border-gray-200 pb-2 text-xs text-gray-1000">
+                <div style={{ fontSize: isPhoneMode ? 'inherit' : largerTextSize }} className="text-sm text-cyan-500 mb-4">
+                  {field.label}
+                </div>
+                <div style={{ fontSize: isPhoneMode ? 'inherit' : largerTextSize }} className="mt-4 border-b border-gray-200 pb-4 text-xs text-gray-1000">
                   {field.value}
                 </div>
               </div>
@@ -228,7 +225,7 @@ function WikiScreen({ custom, animated = false }) {
         </div>
       </MotionAppScreenBody>
     </AppScreen>
-  )
+  );
 }
 
 function CiriScreen({ custom, animated = false }) {
@@ -237,9 +234,6 @@ function CiriScreen({ custom, animated = false }) {
 
   return (
     <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Mari Kita <span className="text-cyan-300">Baca</span></AppScreen.Title>
-      </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-4">
           {/* Use the "mx-auto" class to center the image */}
@@ -266,9 +260,6 @@ function BahayaScreen({ custom, animated = false }) {
 
   return (
     <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Mari Kita <span className="text-cyan-300">Baca</span></AppScreen.Title>
-      </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-4">
           {/* Use the "mx-auto" class to center the image */}
