@@ -109,15 +109,15 @@ export function Header() {
                         >
                           <div className="space-y-4">
                             <MobileNavLink href="#features">
-                              Features
+                              Wiki
                             </MobileNavLink>
                             <MobileNavLink href="#reviews">
-                              Reviews
+                              Edukasi
                             </MobileNavLink>
                             <MobileNavLink href="#pricing">
-                              Pricing
+                              Menu
                             </MobileNavLink>
-                            <MobileNavLink href="#faqs">FAQs</MobileNavLink>
+                            <MobileNavLink href="#calcu">Kalkulator</MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
                             { user?.email ? (

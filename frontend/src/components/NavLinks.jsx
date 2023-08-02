@@ -6,9 +6,9 @@ export function NavLinks() {
   let [hoveredIndex, setHoveredIndex] = useState(null)
 
   return [
-    ['Beranda', '#features'],
-    ['Apa  itu Stunting?', '#reviews'],
-    ['Edukasi', '#pricing'],
+    ['Wiki', '#features'],
+    ['Edukasi', '#reviews'],
+    ['Menu', '#pricing'],
     ['Kalkulator', '#calcu'],
   ].map(([label, href], index) => (
     <Link
