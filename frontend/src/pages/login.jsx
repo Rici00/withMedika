@@ -36,7 +36,7 @@ export default function Login() {
             // ✅ Success ??
             const data = await res ?.data;
             if (data ?.status == true) {
-                setMessage(data.token)
+                setMessage(data.message)
                 console.log(data)
                     // ✅ Save user info to localStorage
                 localStorage.setItem('user', JSON.stringify(data.user))
