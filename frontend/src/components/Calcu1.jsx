@@ -593,11 +593,11 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
     return zScore;
   }
 
-  export function Calcu() {
-    const [anak, setAnak] = useState();
-    const [ibu, setIbu] = useState();
+  export function Calcu1() {
+    // const [anak, setAnak] = useState();
+    // const [ibu, setIbu] = useState();
     const [umur, setUmur] = useState();
-    const [alamat, setAlamat] = useState();
+    // const [alamat, setAlamat] = useState();
     const [jenisKelamin, setJenisKelamin] = useState('Laki-laki');
     const [tinggiBadan, setTinggiBadan] = useState();
     const [hasilPenilaian, setHasilPenilaian] = useState('');
@@ -626,38 +626,38 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
     
       setHasilPenilaian(hasilPenilaian);
     
-      const data = {
-        No: "INCREMENT",
+    //   const data = {
+    //     No: "INCREMENT",
         
-        Umur: umur,
-        jenisKelamin: jenisKelamin,
-        tinggiBadan: tinggiBadan,
-        anak: anak,
-        ibu: ibu,
-        alamat:alamat,
-        hasilPenilaian: hasilPenilaian
-      };
+    //     Umur: umur,
+    //     jenisKelamin: jenisKelamin,
+    //     tinggiBadan: tinggiBadan,
+    //     anak: anak,
+    //     ibu: ibu,
+    //     alamat:alamat,
+    //     hasilPenilaian: hasilPenilaian
+    //   };
     
       
-      // try {
-      //   const response = await axios.post('https://sheetdb.io/api/v1/j6jufalz1dchy', {
-      //     data: [data] // Wrap the data object inside an array as the 'data' property
-      //   }, {
-      //     headers: {
-      //       'Accept': 'application/json',
-      //       'Content-Type': 'application/json'
-      //     }
-      //   })
-      //   ;console.log(response.data);
-      //   // Clear input fields if needed
-      //   // setUmur('');
-      //   // setJenisKelamin('');
-      //   // setTinggiBadan('');
-      //   // setHasilPenilaian('');
-      // } catch (error) {
-      //   // Handle error
-      //   console.error(error);
-      // }
+    //   try {
+    //     const response = await axios.post('https://sheetdb.io/api/v1/j6jufalz1dchy', {
+    //       data: [data] // Wrap the data object inside an array as the 'data' property
+    //     }, {
+    //       headers: {
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json'
+    //       }
+    //     })
+    //     ;console.log(response.data);
+    //     // Clear input fields if needed
+        // setUmur('');
+        // setJenisKelamin('');
+        // setTinggiBadan('');
+        // setHasilPenilaian('');
+    //   } catch (error) {
+    //     // Handle error
+    //     console.error(error);
+    //   }
       resultRef.current.scrollIntoView({ behavior: 'smooth', duration: '0' });
     }
     return (
