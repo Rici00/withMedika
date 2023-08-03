@@ -425,12 +425,12 @@ export function PrimaryFeatures() {
     <section
       id="wiki"
       aria-label="Features for investing all your money"
-      className="bg-cyan-300 py-8 sm:py-12"
+      className="bg-cyan-400 py-8 sm:py-12"
     >
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
-          <h2 className="text-3xl font-medium tracking-tight text-white">
-            Kenali berbagai istilah dalam pertumbuhan anak!
+          <h2 className="text-5xl font-medium tracking-tight text-white">
+            Kenali Berbagai Istilah Dalam Pertumbuhan Anak!
           </h2>
           <p className="mt-2 text-lg text-gray-800">
           <span className="italic">Hi Parents!</span> Biar makin paham terkait perkembangan si kecil dan istilah-istilah
