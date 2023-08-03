@@ -8,6 +8,8 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 
+import Cookies from 'js-cookie';
+
 export default function Login() {
     const router = useRouter();
     // ✅ formData
