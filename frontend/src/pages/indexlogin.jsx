@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-
+//hehe
 import { Calcu } from '@/components/Calcu';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
