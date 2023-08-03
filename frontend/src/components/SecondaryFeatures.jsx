@@ -178,7 +178,7 @@ function DeviceChartIcon(props) {
 export function SecondaryFeatures() {
   return (
     <section
-      id="secondary-features"
+      id="menu"
       aria-label="Features for building a portfolio"
       className="py-20 sm:py-32"
     >
