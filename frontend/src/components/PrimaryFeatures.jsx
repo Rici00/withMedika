@@ -425,7 +425,7 @@ export function PrimaryFeatures() {
     <section
       id="wiki"
       aria-label="Features for investing all your money"
-      className="bg-cyan-400 py-8 sm:py-4"
+      className="bg-cyan-400 py-8 sm:py-20"
     >
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
