@@ -658,7 +658,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
         // Handle error
         console.error(error);
       }
-      resultRef.current.scrollIntoView({ behavior: 'smooth' });
+      resultRef.current.scrollIntoView({ behavior: 'smooth', duration: '0' });
     }
     return (
       <section
